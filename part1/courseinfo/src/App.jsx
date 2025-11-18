@@ -20,9 +20,9 @@ const App = () => {
 
 const Header = (c) => {
   return (
-    <p>
+    <h1>
       {c.course}
-    </p>
+    </h1>
   )
 }
 
