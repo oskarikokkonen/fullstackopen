@@ -33,20 +33,22 @@ const Statistics = ({good, neutral, bad}) => {
       return (good - bad) / total()
     }
 
-    const positive = () => (
-      <div>{good / total() * 100} %</div>
-    )
+    const positive = () => {
+      return (good / total()) * 100
+    }
 
     return (
       <div>
         <h2>statistics</h2>
         <table>
-          <StatisticsLine text="good" value={good}/>
-          <StatisticsLine text="neutral" value={neutral}/>
-          <StatisticsLine text="bad" value={bad}/>
-          <StatisticsLine text="all" value={total()}/>
-          <StatisticsLine text="average" value={average()}/>
-          <StatisticsLine text="positive" value={positive()}/>
+          <tbody>
+            <StatisticsLine text="good" value={good}/>
+            <StatisticsLine text="neutral" value={neutral}/>
+            <StatisticsLine text="bad" value={bad}/>
+            <StatisticsLine text="all" value={total()}/>
+            <StatisticsLine text="average" value={average()}/>
+            <StatisticsLine text="positive" value={`${positive()} %`}/>
+          </tbody>
         </table>
       </div>
     )
